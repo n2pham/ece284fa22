@@ -22,13 +22,13 @@ assign out = psum_q;           // Assign psum_q to out at the next clock edge
 
 always @ (posedge clk) begin
         if(reset) begin              // Synchronous Reset 
-            psum_q <= '0;
+            psum_q <= 16'b0;
         end
         else if (acc) begin          // When acc == 1, psum_q will increment by in
             psum_q <= psum_q + in;
         end
         else if (relu && psum_q < thres) begin  // When relu == 1 and psum_q < thres, set psum_q to 0
-            psum_q <= '0;
+            psum_q <= 16'b0;
         end
         else begin                        // If none of the cases then set to same value
             psum_q <= psum_q;

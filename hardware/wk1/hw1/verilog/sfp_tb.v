@@ -61,7 +61,7 @@ initial begin
 
   in_file = $fopen("in_data.txt", "r"); 
 
-  $dumpfile("sfp_tb.vcd");
+  $dumpfile("sfp_tb_mine.vcd");
   $dumpvars(0,sfp_tb);
 
   #1 clk = 1'b0;  reset = 1; relu = 0; acc = 0;
